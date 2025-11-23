@@ -4,14 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portafolio</title>
+
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       scroll-behavior: smooth;
-      background: linear-gradient(#0d1b3a, #041027); /* Azul oscuro elegante */
+      background: linear-gradient(#0d1b3a, #041027); /* Fondo azul oscuro elegante */
+      color: white;
     }
 
+    /* HEADER */
     header {
       background: linear-gradient(90deg, #002d72, #004cbb); /* Azul metálico */
       padding: 15px 25px;
@@ -24,6 +27,15 @@
       box-shadow: 0 0 25px rgba(0, 120, 255, 0.6);
     }
 
+    header img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 2px solid #00b7ff;
+      box-shadow: 0 0 10px #00b7ff;
+    }
+
+    /* NAV */
     .nav-links a {
       margin: 0 12px;
       text-decoration: none;
@@ -35,22 +47,23 @@
       text-shadow: 0 0 10px #7fc8ff;
     }
 
+    /* SECCIONES */
     section {
-      padding: 140px 60px;
-      margin-top: 180px;
+      padding: 120px 60px;
+      margin-top: 150px;
     }
 
-    /* HERO */
+    /* HERO (PORTADA SIN IMAGEN) */
     #hero {
-      background-image: url('imagenes/hero.jpg');
-      background-size: cover;
-      background-position: center;
+      background: linear-gradient(#002d72, #004cbb);
       color: white;
       text-align: center;
-      padding: 150px 20px;
+      padding: 160px 20px;
       border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
       border: 2px solid #1c6dff;
+      box-shadow: 0 0 25px rgba(28, 94, 255, 0.4);
+      max-width: 1000px;
+      margin: auto;
     }
 
     /* SOBRE MI */
@@ -61,11 +74,10 @@
       margin: auto;
       padding: 50px;
       box-shadow: 0 0 25px rgba(38, 117, 255, 0.45);
-      color: #d3e6ff;
       border: 1px solid #2b62ff;
     }
 
-    /* SECCION PROYECTOS */
+    /* PROYECTOS */
     #proyectos {
       background: rgba(8, 28, 68, 0.9);
       border-radius: 12px;
@@ -73,39 +85,7 @@
       margin: auto;
       padding: 50px;
       box-shadow: 0 0 25px rgba(33, 133, 255, 0.45);
-      color: #cde6ff;
       border: 1px solid #2b62ff;
-    }
-
-    .proyecto-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .proyecto-item {
-      background: #e8f1ff;
-      border-radius: 12px;
-      box-shadow: 0 3px 15px rgba(0,0,0,0.2);
-      overflow: hidden;
-      transition: 0.3s;
-      border: 1px solid #3f7bff;
-    }
-
-    .proyecto-item:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 15px #59a8ff;
-    }
-
-    .proyecto-item img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-    }
-
-    .proyecto-info {
-      padding: 15px;
-      color: #0a1c3d;
     }
 
     /* HABILIDADES */
@@ -116,16 +96,18 @@
       margin: auto;
       padding: 50px;
       box-shadow: 0 0 25px rgba(28, 94, 255, 0.45);
-      color: #d9eaff;
       border: 1px solid #2b62ff;
     }
 
   </style>
 </head>
+
 <body>
 
   <header>
-    <img src="imagenes/perfil.jpg" alt="Foto" style="width:70px;height:70px;border-radius:50%;border:2px solid #00b7ff;box-shadow:0 0 10px #00b7ff;" />
+    <!-- Cuando subas tu foto, cambia el nombre aquí -->
+    <img src="imagenes/perfil.jpg" alt="Foto de perfil" />
+
     <nav class="nav-links">
       <a href="#hero">Inicio</a>
       <a href="#sobre-mi">Sobre mí</a>
@@ -156,6 +138,7 @@
 
 </body>
 </html>
+
 
 
 
