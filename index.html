@@ -104,7 +104,7 @@
       transform: rotate(90deg);
     }
 
-    /* CONTENIDO */
+    /* CONTENIDO DESPLEGABLE */
     .contenido {
       display: none;
       padding: 15px 0;
@@ -262,6 +262,7 @@ function toggle(id, elemento) {
   const secciones = document.querySelectorAll(".contenido");
   const flechas = document.querySelectorAll(".flecha");
 
+  // Cerrar otros
   secciones.forEach(sec => {
     if (sec.id !== id) sec.style.display = "none";
   });
@@ -275,13 +276,19 @@ function toggle(id, elemento) {
   } else {
     el.style.display = "block";
     elemento.querySelector(".flecha").classList.add("abierto");
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    // SCROLL MEJORADO - BAJA HASTA QUE SE VEAN LOS ARCHIVOS
+    setTimeout(() => {
+      const offset = el.getBoundingClientRect().top + window.scrollY - 150;
+      window.scrollTo({ top: offset, behavior: "smooth" });
+    }, 150);
   }
 }
 </script>
 
 </body>
 </html>
+
 
 
 
