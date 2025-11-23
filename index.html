@@ -111,6 +111,40 @@
     }
 
     .lista li:hover { background: #e0ebff; }
+
+    /* 🔹 TARJETAS DE CERTIFICADOS */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .cert-card {
+      background: white;
+      color: #1A2E49;
+      padding: 25px;
+      border-radius: 15px;
+      border: 3px solid #72A3ED;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .cert-card:hover {
+      transform: scale(1.05);
+      background: #eaf2ff;
+    }
+
+    .cert-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #72A3ED;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
   </style>
 </head>
 
@@ -124,6 +158,7 @@
     <a href="#sobre-mi">Sobre mí</a>
     <a href="#proyectos">Proyectos</a>
     <a href="#habilidades">Habilidades</a>
+    <a href="#certificados">Certificados</a> <!-- 🔹 AGREGADO -->
   </nav>
 </header>
 
@@ -142,14 +177,14 @@
     <p>
       Soy una estudiante de ciberseguridad con una mezcla poco común entre lo técnico y lo creativo. Disfruto entender cómo funcionan las cosas por dentro: desde el código, la seguridad informática y la arquitectura de sistemas, hasta la parte visual y humana de cómo las personas interactúan con la tecnología.
       <br><br>
-      No solo me interesa proteger sistemas; también me gusta crear, diseñar y construir proyectos desde cero, ya sea una aplicación, una herramienta o una idea experimental. Me motiva el proceso donde la lógica se une con la creatividad para dar vida a algo funcional y con personalidad.
+      No solo me interesa proteger sistemas; también me gusta crear, diseñar y construir proyectos desde cero, ya sea una aplicación, una herramienta o una idea experimental.
       <br><br>
       La tecnología para mí es una forma de resolver problemas, conectar ideas y dejar algo útil en el mundo. Sigo aprendiendo todos los días, investigando, probando, cometiendo errores y mejorando, porque aprender es parte del camino.
     </p>
   </div>
 </section>
 
-<!-- PROYECTOS -->
+<!-- PROYECTOS (SIN CAMBIOS) -->
 <section id="proyectos">
   <div class="card">
     <h2>Mis Trabajos Académicos</h2>
@@ -219,6 +254,24 @@
   </div>
 </section>
 
+<!-- ⭐ NUEVA SECCIÓN → CERTIFICADOS -->
+<section id="certificados">
+  <div class="card">
+    <h2>Certificados</h2>
+
+    <div class="cert-grid">
+      <div class="cert-card">
+        <h3>Getting Started with Cisco Packet Tracer</h3>
+        <p>Módulo completado — Cisco Networking Academy</p>
+        <a href="certificados/certificado.pdf" target="_blank" class="cert-btn">
+          Ver Certificado
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <script>
 function toggle(id, elemento) {
   const el = document.getElementById(id);
@@ -243,6 +296,7 @@ function toggle(id, elemento) {
 
 </body>
 </html>
+
 
 
 
