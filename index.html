@@ -10,93 +10,98 @@
       margin: 0;
       font-family: Arial, sans-serif;
       scroll-behavior: smooth;
-      background: linear-gradient(#0d1b3a, #041027); /* Fondo azul oscuro elegante */
+      background: #0D1224; 
       color: white;
     }
 
     /* HEADER */
     header {
-      background: linear-gradient(90deg, #002d72, #004cbb); /* Azul metálico */
-      padding: 15px 25px;
+      background: linear-gradient(90deg, #72A3ED, #3C6BC9);
+      padding: 20px 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       position: sticky;
       top: 0;
       z-index: 10;
-      box-shadow: 0 0 25px rgba(0, 120, 255, 0.6);
+      box-shadow: 0 0 25px rgba(114,163,237,0.6);
     }
 
     header img {
       width: 70px;
       height: 70px;
       border-radius: 50%;
-      border: 2px solid #00b7ff;
-      box-shadow: 0 0 10px #00b7ff;
+      border: 3px solid white;
+      box-shadow: 0 0 15px rgba(114,163,237,0.8);
     }
 
-    /* NAV */
     .nav-links a {
-      margin: 0 12px;
+      margin: 0 15px;
       text-decoration: none;
       color: white;
       font-weight: bold;
+      font-size: 18px;
     }
 
     .nav-links a:hover {
-      text-shadow: 0 0 10px #7fc8ff;
+      color: #72A3ED;
+      text-shadow: 0 0 10px #72A3ED;
     }
 
-    /* SECCIONES */
+    /* ESTRUCTURA DE SECCIONES */
     section {
       padding: 120px 60px;
-      margin-top: 150px;
+      margin-top: 120px;
+      display: flex;
+      justify-content: center;
     }
 
-    /* HERO (PORTADA SIN IMAGEN) */
-    #hero {
-      background: linear-gradient(#002d72, #004cbb);
+    /* TARJETAS GENERALES */
+    .card {
+      background: white;
+      color: #1A2E49;
+      padding: 60px 50px;
+      max-width: 1000px;
+      border-radius: 20px;
+      border: 3px solid #72A3ED;
+      box-shadow: 0 0 30px rgba(114,163,237,0.35);
+    }
+
+    /* HERO ESPECIAL */
+    #hero .card {
+      background: #72A3ED;
       color: white;
+    }
+
+    /* GRID TARJETAS */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    /* TARJETA INDIVIDUAL */
+    .card-item {
+      background: white;
+      color: #1A2E49;
+      border-radius: 15px;
+      padding: 25px 20px;
+      border: 3px solid #72A3ED;
+      box-shadow: 0 0 20px rgba(114,163,237,0.25);
+      transition: 0.3s ease;
       text-align: center;
-      padding: 160px 20px;
-      border-radius: 12px;
-      border: 2px solid #1c6dff;
-      box-shadow: 0 0 25px rgba(28, 94, 255, 0.4);
-      max-width: 1000px;
-      margin: auto;
     }
 
-    /* SOBRE MI */
-    #sobre-mi {
-      background: rgba(10, 32, 76, 0.85);
-      border-radius: 12px;
-      max-width: 900px;
-      margin: auto;
-      padding: 50px;
-      box-shadow: 0 0 25px rgba(38, 117, 255, 0.45);
-      border: 1px solid #2b62ff;
+    .card-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(114,163,237,0.45);
+      border-color: #3C6BC9;
+      cursor: pointer;
     }
 
-    /* PROYECTOS */
-    #proyectos {
-      background: rgba(8, 28, 68, 0.9);
-      border-radius: 12px;
-      max-width: 1000px;
-      margin: auto;
-      padding: 50px;
-      box-shadow: 0 0 25px rgba(33, 133, 255, 0.45);
-      border: 1px solid #2b62ff;
-    }
-
-    /* HABILIDADES */
-    #habilidades {
-      background: rgba(6, 24, 55, 0.9);
-      border-radius: 12px;
-      max-width: 1000px;
-      margin: auto;
-      padding: 50px;
-      box-shadow: 0 0 25px rgba(28, 94, 255, 0.45);
-      border: 1px solid #2b62ff;
+    h1, h2, h3, h4 {
+      text-align: center;
     }
 
   </style>
@@ -104,10 +109,9 @@
 
 <body>
 
+  <!-- ====================== HEADER ====================== -->
   <header>
-    <!-- Cuando subas tu foto, cambia el nombre aquí -->
     <img src="imagenes/perfil.jpg" alt="Foto de perfil" />
-
     <nav class="nav-links">
       <a href="#hero">Inicio</a>
       <a href="#sobre-mi">Sobre mí</a>
@@ -116,28 +120,157 @@
     </nav>
   </header>
 
+  <!-- ====================== HERO ====================== -->
   <section id="hero">
-    <h1>Bienvenida a mi Portafolio</h1>
-    <p>Este es mi espacio profesional y académico.</p>
+    <div class="card">
+      <h1>Bienvenida a mi Portafolio</h1>
+      <p>Este es mi espacio profesional y académico.</p>
+    </div>
   </section>
 
+  <!-- ====================== SOBRE MI ====================== -->
   <section id="sobre-mi">
-    <h2>Sobre mí</h2>
-    <p>Aquí irá tu descripción personal.</p>
+    <div class="card">
+      <h2>Sobre mí</h2>
+      <p>Aquí irá tu descripción personal.</p>
+    </div>
   </section>
 
+  <!-- ====================== PROYECTOS ====================== -->
   <section id="proyectos">
-    <h2>Mis trabajos</h2>
-    <p>Aquí dividiremos por categorías: quices, parciales, talleres, etc.</p>
+    <div class="card">
+      <h2>Mis Trabajos Académicos</h2>
+      <p>Estos son los trabajos realizados durante mis cursos universitarios.</p>
+    </div>
   </section>
 
+
+  <!-- ====================== QUICES ====================== -->
+  <section>
+    <div class="card">
+      <h3>📘 Quices</h3>
+      <div class="card-grid">
+
+        <div class="card-item">
+          <h4>Quiz 1</h4>
+          <p>Descripción del primer quiz.</p>
+        </div>
+
+        <div class="card-item">
+          <h4>Quiz 2</h4>
+          <p>Descripción del segundo quiz.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== PARCIALES ====================== -->
+  <section>
+    <div class="card">
+      <h3>📕 Parciales</h3>
+      <div class="card-grid">
+
+        <div class="card-item">
+          <h4>Parcial 1</h4>
+          <p>Descripción del parcial.</p>
+        </div>
+
+        <div class="card-item">
+          <h4>Parcial 2</h4>
+          <p>Descripción del parcial.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== INVESTIGACIONES ====================== -->
+  <section>
+    <div class="card">
+      <h3>📎 Investigaciones</h3>
+      <div class="card-grid">
+
+        <div class="card-item">
+          <h4>Investigación 1</h4>
+          <p>Descripción breve.</p>
+        </div>
+
+        <div class="card-item">
+          <h4>Investigación 2</h4>
+          <p>Descripción breve.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== LABORATORIOS ====================== -->
+  <section>
+    <div class="card">
+      <h3>🧪 Laboratorios</h3>
+      <div class="card-grid">
+
+        <div class="card-item">
+          <h4>Laboratorio 1</h4>
+          <p>Descripción.</p>
+        </div>
+
+        <div class="card-item">
+          <h4>Laboratorio 2</h4>
+          <p>Descripción.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== TALLERES ====================== -->
+  <section>
+    <div class="card">
+      <h3>🔧 Talleres</h3>
+      <div class="card-grid">
+
+        <div class="card-item">
+          <h4>Taller 1</h4>
+          <p>Descripción.</p>
+        </div>
+
+        <div class="card-item">
+          <h4>Taller 2</h4>
+          <p>Descripción.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== EJERCICIO PRÁCTICO ====================== -->
+  <section>
+    <div class="card">
+      <h3>🧠 Ejercicio Práctico</h3>
+      <div class="card-grid">
+
+        <div class="card-item">
+          <h4>Ejercicio Único</h4>
+          <p>Descripción del trabajo práctico.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== HABILIDADES ====================== -->
   <section id="habilidades">
-    <h2>Habilidades</h2>
-    <p>Lista de habilidades aquí...</p>
+    <div class="card">
+      <h2>Habilidades</h2>
+      <p>Lista de habilidades aquí...</p>
+    </div>
   </section>
 
 </body>
 </html>
+
 
 
 
